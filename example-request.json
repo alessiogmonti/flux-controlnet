@@ -1,0 +1,292 @@
+{
+  "input": {
+    "workflow": {
+      "1": {
+        "inputs": {
+          "filename": "flux1-dev-Q4_K_S.gguf"
+        },
+        "class_type": "UnetLoaderGGUF",
+        "_meta": {
+          "title": "UnetLoaderGGUF"
+        }
+      },
+      "2": {
+        "inputs": {
+          "filename": "clip_l.safetensors"
+        },
+        "class_type": "DualCLIPLoaderGGUF",
+        "_meta": {
+          "title": "DualCLIPLoaderGGUF"
+        }
+      },
+      "5": {
+        "inputs": {
+          "text": "3D rendering, ultra-hd, brightly colored",
+          "clip": [
+            "27",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncodeFlux",
+        "_meta": {
+          "title": "CLIPTextEncodeFlux"
+        }
+      },
+      "7": {
+        "inputs": {
+          "filename_prefix": "ComfyUI",
+          "images": [
+            "11",
+            0
+          ]
+        },
+        "class_type": "SaveImage",
+        "_meta": {
+          "title": "SaveImage"
+        }
+      },
+      "8": {
+        "inputs": {
+          "filename": "ae.safetensors"
+        },
+        "class_type": "VAELoader",
+        "_meta": {
+          "title": "VAELoader"
+        }
+      },
+      "9": {
+        "inputs": {
+          "value": 4120
+        },
+        "class_type": "EmptyLatentImage",
+        "_meta": {
+          "title": "EmptyLatentImage"
+        }
+      },
+      "11": {
+        "inputs": {
+          "samples": [
+            "39",
+            0
+          ],
+          "vae": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "VAEDecode",
+        "_meta": {
+          "title": "VAEDecode"
+        }
+      },
+      "12": {
+        "inputs": {
+          "image": "untitled.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "18": {
+        "inputs": {
+          "pixels": [
+            "23",
+            0
+          ],
+          "vae": [
+            "8",
+            0
+          ]
+        },
+        "class_type": "VAEEncode",
+        "_meta": {
+          "title": "VAEEncode"
+        }
+      },
+      "20": {
+        "inputs": {
+          "value": 1,
+          "controlnet": [
+            "21",
+            0
+          ],
+          "image": [
+            "35",
+            0
+          ]
+        },
+        "class_type": "ApplyFluxControlNet",
+        "_meta": {
+          "title": "ApplyFluxControlNet"
+        }
+      },
+      "21": {
+        "inputs": {
+          "text": "flux-dev"
+        },
+        "class_type": "LoadFluxControlNet",
+        "_meta": {
+          "title": "LoadFluxControlNet"
+        }
+      },
+      "23": {
+        "inputs": {
+          "value": 1024,
+          "image": [
+            "31",
+            0
+          ]
+        },
+        "class_type": "ImageCrop",
+        "_meta": {
+          "title": "ImageCrop"
+        }
+      },
+      "27": {
+        "inputs": {
+          "lora_name": "flux_realism_lora.safetensors",
+          "strength_model": 1,
+          "strength_clip": 1,
+          "model": [
+            "1",
+            0
+          ],
+          "clip": [
+            "2",
+            0
+          ]
+        },
+        "class_type": "LoraLoader",
+        "_meta": {
+          "title": "LoraLoader"
+        }
+      },
+      "28": {
+        "inputs": {
+          "text": "3D hyperrealistic render, gritty, ultra-hd, surreal, hyper real, final fantasy, photograph"
+        },
+        "class_type": "CLIPTextEncodeFlux",
+        "_meta": {
+          "title": "CLIPTextEncodeFlux"
+        }
+      },
+      "29": {
+        "inputs": {
+          "text": "3D rendering, ultra-hd, brightly colored"
+        },
+        "class_type": "CLIPTextEncodeFlux",
+        "_meta": {
+          "title": "CLIPTextEncodeFlux"
+        }
+      },
+      "30": {
+        "inputs": {
+          "text": "3D rendering, ultra-hd, brightly colored"
+        },
+        "class_type": "CLIPTextEncodeFlux",
+        "_meta": {
+          "title": "CLIPTextEncodeFlux"
+        }
+      },
+      "31": {
+        "inputs": {
+          "image": "Screenshot 2025-11-12 at 14.55.45.png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "35": {
+        "inputs": {
+          "value": 1024,
+          "image": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "ImageCrop",
+        "_meta": {
+          "title": "ImageCrop"
+        }
+      },
+      "36": {
+        "inputs": {
+          "images": [
+            "37",
+            0
+          ]
+        },
+        "class_type": "PreviewImage",
+        "_meta": {
+          "title": "PreviewImage"
+        }
+      },
+      "37": {
+        "inputs": {
+          "value": 1024,
+          "image": [
+            "38",
+            0
+          ]
+        },
+        "class_type": "ResizeAndPadImage",
+        "_meta": {
+          "title": "ResizeAndPadImage"
+        }
+      },
+      "38": {
+        "inputs": {
+          "image": "IMG_4441 (1).png"
+        },
+        "class_type": "LoadImage",
+        "_meta": {
+          "title": "LoadImage"
+        }
+      },
+      "39": {
+        "inputs": {
+          "value": 0,
+          "model": [
+            "27",
+            0
+          ],
+          "conditioning": [
+            "5",
+            0
+          ],
+          "neg_conditioning": [
+            "40",
+            0
+          ],
+          "latent_image": [
+            "18",
+            0
+          ],
+          "controlnet_condition": [
+            "20",
+            0
+          ]
+        },
+        "class_type": "XlabsSampler",
+        "_meta": {
+          "title": "XlabsSampler"
+        }
+      },
+      "40": {
+        "inputs": {
+          "text": "",
+          "clip": [
+            "27",
+            1
+          ]
+        },
+        "class_type": "CLIPTextEncodeFlux",
+        "_meta": {
+          "title": "CLIPTextEncodeFlux"
+        }
+      }
+    }
+  }
+}
